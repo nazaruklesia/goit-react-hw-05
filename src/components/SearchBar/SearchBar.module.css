@@ -1,0 +1,22 @@
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.input {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    border-radius: 1 solid #000;
+}
+
+.btn {
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    border-radius: 1 solid #000;
+
+}
