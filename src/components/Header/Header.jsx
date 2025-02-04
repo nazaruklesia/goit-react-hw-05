@@ -12,7 +12,7 @@ const Header = () => {
         <h2>will be title</h2>
         <nav className={s.nav}>
             <NavLink className={buildLinkClass} to="/"> Home</NavLink>
-            <NavLink className={buildLinkClass} to="/list">Movies List</NavLink>
+            <NavLink className={buildLinkClass} to="/movies">Movies Pages</NavLink>
         </nav>
     </header>
 }

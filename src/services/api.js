@@ -1,43 +1,122 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://www.themoviedb.org';
-const API_KEY_bmdb = process.env.REACT_APP_API_KEY;
-const API_TOKEN_bmdb = process.env.REACT_APP_API_TOKEN;
+const baseURL = 'https://api.themoviedb.org/3';
+const API_KEY  = import.meta.env.VITE_API_KEY;
+const apiToken = import.meta.env.VITE_API_TOKEN;
 
 
-const options = {
- headers: {
- Authorization: 'Bearer ${API_TOKEN}'}
-};
+export async function fetchDetailsMovies(movieId) {
+  const options = {
+    method: 'GET',
+    url: `${baseURL}/movie/${movieId}`,
+    params: {
+      api_key: API_KEY,
+      page: 1,
+    },
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${apiToken}`,
+    },
+  };
 
-export const fetchMovies = async (query, page = 1) => {
-     try {
-        const response = await axios.get(BASE_URL, {
-            params: {
-                avatar,
-                id,
-                page,
-                per_page: 20,
-                end_date,
-                start_date,
-                total_pages,
-                account_id: API_KEY_bmdb
-            }
-        })
-        
-        return response.data
-        
-    } catch (error) {
-        throw new Error("Movie request failed");
-    }
-    
+  try {
+    const response = await axios.request(options);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching movie details:', error);
+    throw error;
+  }
 }
 
+export async function fetchCreditsMovies(movieId) {
+  const options = {
+    method: 'GET',
+    url: `${baseURL}/movie/${movieId}/credits`,
+    params: {
+      api_key: API_KEY,
+      page: 1,
+    },
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${apiToken}`,
+    },
+  };
 
-axios.get(url, options)
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+  try {
+    const response = await axios.request(options);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching movie credits:', error);
+    throw error;
+  }
+}
 
+export async function fetchReviewsMovies(movieId) {
+  const options = {
+    method: 'GET',
+    url: `${baseURL}/movie/${movieId}/reviews`,
+    params: {
+      api_key: API_KEY,
+      page: 1,
+    },
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${apiToken}`,
+    },
+  };
 
+  try {
+    const response = await axios.request(options);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching movie reviews:', error);
+    throw error;
+  }
+}
 
-    
+export async function fetchTrendingMovies() {
+  const options = {
+    method: 'GET',
+    url: `${baseURL}/trending/movie/day`,
+    params: {
+      api_key: API_KEY,
+      page: 1,
+    },
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${apiToken}`,
+    },
+  };
+
+  try {
+    const response = await axios.request(options);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching trending movies:', error);
+    throw error;
+  }
+}
+
+export async function fetchKeywordMovies(query) {
+  const options = {
+    method: 'GET',
+    url: `${baseURL}/search/movie`,
+    params: {
+      api_key: API_KEY,
+      query: query, 
+      page: 1,
+    },
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${apiToken}`,
+    },
+  };
+
+  try {
+    const response = await axios.request(options);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching movies by keyword:', error);
+    throw error;
+  }
+}

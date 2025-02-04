@@ -1,10 +1,10 @@
 import MovieList from "../components/MovieList/MovieList";
 
 const MoviePage = () => {
-    return <div>
-        MoviePage
-        <MovieList />
+return (<div>
+        <p>має бути список фільмів</p>
         
-    </div>
+        {/* <MovieList movie={movie}/> */}
+ </div>)
 }
 export default MoviePage;

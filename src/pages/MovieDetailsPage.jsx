@@ -1,14 +1,14 @@
+import { NavLink, Outlet } from "react-router-dom";
 import MovieCast from "../components/MovieCast/MovieCast";
 import MovieReviews from "../components/MovieReviews/MovieReviews";
 
 const MovieDetailsPage = () => {
     return <div>
-        MovieDetailsPage
+        <p>Movie Details Page</p>
 
         
-        <MovieReviews />
-        
-       <MovieCast/>
+        {/* <MovieCast />
+        <MovieReviews/> */}
    </div>
 }
 export default MovieDetailsPage;
