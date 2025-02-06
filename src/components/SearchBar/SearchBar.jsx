@@ -1,24 +1,25 @@
+import { Field, Form, Formik } from "formik"
 import s from "./SearchBar.module.css"
 
 
-const SearchBar = () => {
+const SearchBar = ({ handleChandeQuery }) => {
+
+    const onSubmit = values => {
+        handleChandeQuery(values.query)
+    }
+
+    const initialValues = {
+        query: '',
+
+    }
     return (
-        <div> 
-
-
-            {/* onSubmit={handleSabmit} */}
-            <form  className={s.form} >
-                <input className={s.input}
-                    // onChange={handleChange}
-                    // value={query}
-                    type="text"
-                    autoComplete="off"
-                    autoFocus
-                    placeholder="Search movie..."
-                />
-                
-                <button className={s.btn} type="submit">Search</button>
-            </form>
+        <div>
+            <Formik initialValues={initialValues} onSubmit={onSubmit} >
+                <Form className={s.form}>
+                    <Field name='query' placeholder="Search..." />
+                    <button className={s.btn} type="submit">Search</button>
+                </Form>
+            </Formik>
         </div>
     )
 }

@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
-import SearchBar from "./components/SearchBar/SearchBar";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import MovieDetailsPage from "./pages/MovieDetailsPage";
@@ -13,7 +12,6 @@ import Navigation from "./components/Navigation/Navigation";
 const App = () => {
     return <main>
         <Header />
-        <SearchBar />
         <Navigation />
         <Routes>
             <Route path="/" element={<HomePage />} />

@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 
-function MovieList({ movies }) {
+function MovieList({ movies = [] }) {
 
   return (
 

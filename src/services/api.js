@@ -6,7 +6,6 @@ const apiToken = import.meta.env.VITE_API_TOKEN;
 
 
 
-
 export async function fetchTrendingMovies() {
   const options = {
     method: 'GET',
@@ -125,6 +124,31 @@ export async function fetchKeywordMovies(query) {
     return response.data;
   } catch (error) {
     console.error('Error fetching movies by keyword:', error);
+    throw error;
+  }
+}
+
+
+
+export async function fetchAllMovies(page = 1) {
+  const options = {
+    method: 'GET',
+    url: `${baseURL}/movie/top_rated`,
+    params: {
+      api_key: API_KEY,
+      page,
+    },
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${apiToken}`,
+    },
+  };
+
+  try {
+    const response = await axios.request(options);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching all movies:', error);
     throw error;
   }
 }
