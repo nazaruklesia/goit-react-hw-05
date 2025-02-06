@@ -14,20 +14,18 @@ const App = () => {
     return <main>
         <Header />
         <SearchBar />
-        <Navigation/>
-              <Routes>
-            <Route path="/" element={<HomePage/>} />
-            <Route path="/movies" element={<MoviePage/>} />
-            <Route path="/movies/:moviesId" element={<MovieDetailsPage />}>
-                <Route path="cast" element={<MovieCast/>} />
-                <Route path="reviews" element={<MovieReviews/>} />
-            
-            </Route>
-            <Route path="*" element= {<NotFoundPage/>} />
+        <Navigation />
+        <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/movies" element={<MoviePage />} />
+            <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
+                <Route path="cast" element={<MovieCast />} />
+                <Route path="reviews" element={<MovieReviews />} />
 
-            </Routes>
-        
-        
+            </Route>
+            <Route path="*" element={<NotFoundPage />} />
+
+        </Routes>
     </main>
 }
 

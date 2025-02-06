@@ -1,8 +1,34 @@
 import axios from 'axios';
 
 const baseURL = 'https://api.themoviedb.org/3';
-const API_KEY  = import.meta.env.VITE_API_KEY;
+const API_KEY = import.meta.env.VITE_API_KEY;
 const apiToken = import.meta.env.VITE_API_TOKEN;
+
+
+
+
+export async function fetchTrendingMovies() {
+  const options = {
+    method: 'GET',
+    url: `${baseURL}/trending/movie/day`,
+    params: {
+      api_key: API_KEY,
+      page: 1
+    },
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${apiToken}`,
+    },
+  };
+
+  try {
+    const response = await axios.request(options);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching trending movies:', error);
+    throw error;
+  }
+}
 
 
 export async function fetchDetailsMovies(movieId) {
@@ -28,6 +54,7 @@ export async function fetchDetailsMovies(movieId) {
   }
 }
 
+
 export async function fetchCreditsMovies(movieId) {
   const options = {
     method: 'GET',
@@ -51,6 +78,7 @@ export async function fetchCreditsMovies(movieId) {
   }
 }
 
+
 export async function fetchReviewsMovies(movieId) {
   const options = {
     method: 'GET',
@@ -58,6 +86,8 @@ export async function fetchReviewsMovies(movieId) {
     params: {
       api_key: API_KEY,
       page: 1,
+      // release_dates,
+      // vote_average
     },
     headers: {
       accept: 'application/json',
@@ -74,28 +104,6 @@ export async function fetchReviewsMovies(movieId) {
   }
 }
 
-export async function fetchTrendingMovies() {
-  const options = {
-    method: 'GET',
-    url: `${baseURL}/trending/movie/day`,
-    params: {
-      api_key: API_KEY,
-      page: 1,
-    },
-    headers: {
-      accept: 'application/json',
-      Authorization: `Bearer ${apiToken}`,
-    },
-  };
-
-  try {
-    const response = await axios.request(options);
-    return response.data;
-  } catch (error) {
-    console.error('Error fetching trending movies:', error);
-    throw error;
-  }
-}
 
 export async function fetchKeywordMovies(query) {
   const options = {
@@ -103,7 +111,7 @@ export async function fetchKeywordMovies(query) {
     url: `${baseURL}/search/movie`,
     params: {
       api_key: API_KEY,
-      query: query, 
+      query: query,
       page: 1,
     },
     headers: {

@@ -4,7 +4,7 @@ import s from "./Header.module.css"
 
 
 const buildLinkClass = ({ isActive }) => {
-  return clsx(s.link, isActive && s.active);
+    return clsx(s.link, isActive && s.active);
 };
 
 const Header = () => {

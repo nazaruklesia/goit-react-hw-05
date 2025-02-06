@@ -1,21 +1,25 @@
 
 import { Link } from 'react-router-dom';
-import s from './MovieList.module.css';
 
 function MovieList({ movies }) {
-    {
-        
-}
+
   return (
-    <ul className={s.list}>
-      {movies.map(movie => (
-        <li key={movie.id}>
-              <Link to={`/movies/${movie.id}`}>{`movies/${movie.title}`}</Link>
-              
+
+    <div>
+      <ul>
+        {movies.map(item => (
+          <li key={item.id.toString()}>
+            <Link to={`/movies/${item.id}`}>
+              {item.title}
+              {/* {item.release_date} */}
+            </Link>
           </li>
-          
-      ))}
-    </ul>
+        ))}
+      </ul>
+
+
+    </div>
+
   );
 }
 
