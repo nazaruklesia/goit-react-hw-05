@@ -2,16 +2,16 @@ import { Field, Form, Formik } from "formik"
 import s from "./SearchBar.module.css"
 
 
-const SearchBar = ({ handleChandeQuery }) => {
+const SearchBar = ({ handleChandeQuery, query }) => {
 
     const onSubmit = values => {
         handleChandeQuery(values.query)
     }
 
     const initialValues = {
-        query: '',
+        query,
 
-    }
+    };
     return (
         <div>
             <Formik initialValues={initialValues} onSubmit={onSubmit} >

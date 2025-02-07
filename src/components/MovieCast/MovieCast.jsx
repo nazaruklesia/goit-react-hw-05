@@ -7,6 +7,9 @@ const MovieCast = () => {
     const { movieId } = useParams()
     const [cast, setCast] = useState([])
 
+    console.log(useParams());
+
+
     useEffect(() => {
         const getData = async () => {
             const data = await fetchCreditsMovies(movieId)
@@ -20,7 +23,7 @@ const MovieCast = () => {
 
         <h2>Movie cast:</h2>
         <ul>
-            {cast.map(actor => <li key={actor.id}>
+            {cast.map((actor, index) => <li key={`${actor.id}-${index}`}>
 
                 <p>{actor.name}</p>
                 {actor.profile_path && (

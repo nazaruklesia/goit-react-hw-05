@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import MovieList from "../components/MovieList/MovieList";
 import { fetchAllMovies } from "../services/api";
+import { useLocation } from "react-router-dom";
 
 const MoviePage = () => {
 
         const [movies, setMovies] = useState([])
+        const location = useLocation();
+        console.log(location);
+
         useEffect(() => {
                 const getData = async () => {
                         try {
