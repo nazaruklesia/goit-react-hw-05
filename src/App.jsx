@@ -1,9 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import Header from "./components/Header/Header";
-// import HomePage from "./pages/HomePage";
-// import NotFoundPage from "./pages/NotFoundPage";
-// import MovieDetailsPage from "./pages/MovieDetailsPage";
-// import MoviePage from "./pages/MoviesPage";
 import MovieCast from "./components/MovieCast/MovieCast";
 import MovieReviews from "./components/MovieReviews/MovieReviews";
 import Navigation from "./components/Navigation/Navigation";
@@ -14,11 +9,13 @@ const NotFoundPage = lazy(() => import("./pages/NotFoundPage"))
 const MovieDetailsPage = lazy(() => import("./pages/MovieDetailsPage"))
 const MoviePage = lazy(() => import("./pages/MoviesPage"))
 
+
+
 const App = () => {
     return <main>
-        <Header />
+        <Navigation />
+
         <Suspense fallback={<h1 style={{ textAlign: "center", color: "red" }}>⏳ Завантаження...</h1>}>
-            <Navigation />
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/movies" element={<MoviePage />} />

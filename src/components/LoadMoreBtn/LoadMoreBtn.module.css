@@ -1,0 +1,25 @@
+.button {
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    font-size: 24px;
+    border: none;
+    color: rgb(193, 5, 5);
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    cursor: pointer;
+}
+
+
+.button:hover,
+.button:focus {
+    color: rgb(154, 4, 4);
+    font-weight: 800;
+
+}

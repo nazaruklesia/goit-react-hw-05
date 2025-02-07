@@ -9,8 +9,12 @@ import { useLocation, useSearchParams } from "react-router-dom"
 const HomePage = () => {
 
     const [movies, setMovies] = useState([])
+
+
     const [searchParams, setSearchParams] = useSearchParams()
     const query = searchParams.get('query') ?? '';
+
+
     const location = useLocation();
     console.log(location);
 

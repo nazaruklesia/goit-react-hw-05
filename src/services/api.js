@@ -85,8 +85,7 @@ export async function fetchReviewsMovies(movieId) {
     params: {
       api_key: API_KEY,
       page: 1,
-      // release_dates,
-      // vote_average
+
     },
     headers: {
       accept: 'application/json',

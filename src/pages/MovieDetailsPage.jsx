@@ -1,6 +1,4 @@
 import { Link, NavLink, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
-import MovieCast from "../components/MovieCast/MovieCast";
-import MovieReviews from "../components/MovieReviews/MovieReviews";
 import { useEffect, useRef, useState } from "react";
 import { fetchDetailsMovies } from "../services/api";
 
@@ -42,8 +40,6 @@ const MovieDetailsPage = () => {
         <section><Outlet /></section>
 
 
-        {/* <MovieCast />
-        <MovieReviews/> */}
     </div>
 }
 export default MovieDetailsPage;
