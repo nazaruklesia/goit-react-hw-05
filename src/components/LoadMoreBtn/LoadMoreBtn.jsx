@@ -1,7 +1,6 @@
-import s from "./LoadMoreBtn.module.css"
 
 const LoadMoreBtn = ({ onClick, disabled }) => {
-    return <button onClick={onClick} disabled={disabled} className={s.button}>
+    return <button onClick={onClick} disabled={disabled} >
         Load more
     </button>
 }

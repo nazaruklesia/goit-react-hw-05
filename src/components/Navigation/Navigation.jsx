@@ -8,13 +8,14 @@ const buildLinkClass = ({ isActive }) => {
 
 const Navigation = () => {
   return (
-    <div>
+    <div >
 
-      <header>
-        <h2>will be title</h2>
+      <header className={s.header} >
+        <h2 className={s.title} >Movie Tracker </h2>
+
         <nav className={s.nav}>
           <NavLink className={buildLinkClass} to="/"> Home</NavLink>
-          <NavLink className={buildLinkClass} to="/movies">Movies Pages</NavLink>
+          <NavLink className={buildLinkClass} to="/movies">All Movies</NavLink>
         </nav>
       </header>
 

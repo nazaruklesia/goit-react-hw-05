@@ -1,0 +1,16 @@
+.container {
+    max-width: 1440px;
+    padding: 0 100px;
+
+}
+
+
+p {
+    margin: 0;
+    padding: 10px;
+    font-size: 22px;
+    font-weight: 100;
+    color: #F5F5F5;
+    letter-spacing: 0.4mm;
+    text-align: center;
+}

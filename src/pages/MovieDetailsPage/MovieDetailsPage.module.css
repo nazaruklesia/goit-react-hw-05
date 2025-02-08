@@ -1,0 +1,58 @@
+.container {
+    padding: 0 100px;
+}
+
+.goBackUrl {
+    background-color: #FB1351;
+    color: white;
+    border: none;
+    padding: 3px 7px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 10px;
+    width: 70px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+
+.movieDetails {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 30px;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    gap: 25px;
+
+
+}
+
+.title {
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+.year {
+    color: #FB1351;
+
+}
+
+.rating {
+    color: #ff9500c5;
+}
+
+.overview {
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 0.2mm;
+}
+
+.genres {
+    color: #fff;
+}
+
+strong {
+    font-weight: 900;
+}

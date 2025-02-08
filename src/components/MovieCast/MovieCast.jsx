@@ -7,9 +7,6 @@ const MovieCast = () => {
     const { movieId } = useParams()
     const [cast, setCast] = useState([])
 
-    console.log(useParams());
-
-
     useEffect(() => {
         const getData = async () => {
             const data = await fetchCreditsMovies(movieId)
@@ -19,7 +16,7 @@ const MovieCast = () => {
     }, [movieId])
 
 
-    return <div>
+    return <div >
 
         <h2>Movie cast:</h2>
         <ul>

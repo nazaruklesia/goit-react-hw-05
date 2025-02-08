@@ -1,20 +1,16 @@
 import { useEffect, useState } from "react"
-import SearchBar from "../components/SearchBar/SearchBar"
-import MovieList from "../components/MovieList/MovieList"
-import { fetchTrendingMovies } from "../services/api"
+import SearchBar from "../../components/SearchBar/SearchBar.jsx"
+import MovieList from "../../components/MovieList/MovieList.jsx"
+import { fetchTrendingMovies } from "../../services/api.js"
 import { useLocation, useSearchParams } from "react-router-dom"
-
+import s from "./HomePage.module.css"
 
 
 const HomePage = () => {
 
     const [movies, setMovies] = useState([])
-
-
     const [searchParams, setSearchParams] = useSearchParams()
     const query = searchParams.get('query') ?? '';
-
-
     const location = useLocation();
     console.log(location);
 
@@ -38,8 +34,9 @@ const HomePage = () => {
         searchParams.set('query', value)
         setSearchParams(searchParams)
     }
-    return <div>
+    return <div className={s.container}>
         <SearchBar handleChandeQuery={handleChandeQuery} query={query} />
+        <p>Popular Movies of the Day</p>
         <MovieList movies={filteredMovies} />
     </div>
 }

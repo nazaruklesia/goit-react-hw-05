@@ -128,26 +128,15 @@ export async function fetchKeywordMovies(query) {
 }
 
 
-
-export async function fetchAllMovies(page = 1) {
-  const options = {
-    method: 'GET',
-    url: `${baseURL}/movie/top_rated`,
-    params: {
-      api_key: API_KEY,
-      page,
-    },
-    headers: {
-      accept: 'application/json',
-      Authorization: `Bearer ${apiToken}`,
-    },
-  };
-
+export const fetchAllMovies = async (query = "", page = 1) => {
+  const endpoint = query ? "/search/movie" : "/movie/top_rated";
   try {
-    const response = await axios.request(options);
-    return response.data;
+    const { data } = await axios.get(`${baseURL}${endpoint}`, {
+      params: { query, page, api_key: API_KEY },
+    });
+    return data;
   } catch (error) {
-    console.error('Error fetching all movies:', error);
-    throw error;
+    console.error("Error fetching movies:", error.message);
+    return { results: [], total_pages: 1 };
   }
-}
+};

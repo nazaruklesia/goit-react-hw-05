@@ -1,15 +1,17 @@
 body {
-  font-family: sans-serif;
-  line-height: 1.5;
+
+  font-family: 'Poppins', sans-serif;
+  background-image: url("../src/img/Section\ 1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
 }
 
-header {
-  padding: 20px;
-  background-color: black;
-  color: white;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
+a {
+  color: #fff;
+  text-decoration: none;
 }
 
 h1,
@@ -17,8 +19,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p {
+h6 {
   margin: 0;
 }
 
@@ -26,11 +27,14 @@ ul,
 ol {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
-a {
-  text-decoration: underline;
+.containet {
+  max-width: 1440px;
+  padding: 0 32px;
 }
+
 
 img {
   display: block;
@@ -41,16 +45,30 @@ img {
   display: flex;
   justify-content: end;
   align-items: end;
-  gap: 40px;
-  margin: 10px;
+  /* gap: 40px;
+  margin: 10px; */
   background-color: rgb(35, 10, 58);
 }
 
-.nav {
-  display: flex;
-  justify-content: end;
-  align-items: end;
-  gap: 40px;
-  margin: 10px;
-  background-color: #e3f8a3;
+/* .nav {
+  color: #F5F5F5;
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 18px;
+} */
+
+
+button {
+  background-color: #FB1351;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 10px;
+
+}
+
+button:hover {
+  background-color: #fb135184;
 }

@@ -1,18 +1,56 @@
 .link {
-    color: beige;
+    color: #F5F5F5;
     text-decoration: none;
     margin: 0 10px;
 
 }
 
 .active {
-    color: aquamarine;
+    color: #FFD700;
 
 }
 
 .nav {
+    color: #F5F5F5;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+
+.header {
+    width: 100vw;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 30px;
+    margin: 0;
+    box-sizing: border-box;
     display: flex;
-    justify-content: end;
-    align-items: end;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.title {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    font-weight: 990;
+    line-height: 130%;
+    font-size: 35px;
+    letter-spacing: 0.8mm;
+    background: linear-gradient(to top, #FFD700, #f6e8a9);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+
+.article {
+
+    font-weight: 700;
+    line-height: 118%;
+    letter-spacing: -0.04em;
+    color: rgba(255, 255, 255, 0.5);
 }

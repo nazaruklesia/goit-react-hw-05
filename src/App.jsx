@@ -3,11 +3,12 @@ import MovieCast from "./components/MovieCast/MovieCast";
 import MovieReviews from "./components/MovieReviews/MovieReviews";
 import Navigation from "./components/Navigation/Navigation";
 import { lazy, Suspense } from "react";
+import Loader from "./components/Loader/Loader";
 
-const HomePage = lazy(() => import("./pages/HomePage"))
-const NotFoundPage = lazy(() => import("./pages/NotFoundPage"))
-const MovieDetailsPage = lazy(() => import("./pages/MovieDetailsPage"))
-const MoviePage = lazy(() => import("./pages/MoviesPage"))
+const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"))
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage.jsx"))
+const MovieDetailsPage = lazy(() => import("./pages/MovieDetailsPage/MovieDetailsPage.jsx"))
+const MoviePage = lazy(() => import("./pages/MoviesPage/MoviesPage.jsx"))
 
 
 
@@ -15,7 +16,7 @@ const App = () => {
     return <main>
         <Navigation />
 
-        <Suspense fallback={<h1 style={{ textAlign: "center", color: "red" }}>⏳ Завантаження...</h1>}>
+        <Suspense fallback={<Loader />}>
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/movies" element={<MoviePage />} />
