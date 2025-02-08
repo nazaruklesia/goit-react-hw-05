@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { fetchCreditsMovies } from "../../services/api"
+import s from "./MovieCast.module.css"
 
 const MovieCast = () => {
 
@@ -16,25 +17,25 @@ const MovieCast = () => {
     }, [movieId])
 
 
-    return <div >
+    return <div>
 
-        <h2>Movie cast:</h2>
-        <ul>
-            {cast.map((actor, index) => <li key={`${actor.id}-${index}`}>
+        <ul className={s.movieCast} >
+            {cast.map((actor, index) =>
+                <li key={`${actor.id}-${index}`} className={s.item}>
 
-                <p>{actor.name}</p>
-                {actor.profile_path && (
-                    <img
-                        src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
-                        alt={actor.name}
-                        width={120}
-                    />
-                )}
+                    <p>{actor.name}</p>
+                    {actor.profile_path && (
+                        <img
+                            src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
+                            alt={actor.name}
+                            width={120}
+                        />
+                    )}
 
-            </li>)}
+                </li>)}
         </ul>
 
-    </div>
+    </div >
 }
 
 

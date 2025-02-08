@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchReviewsMovies } from "../../services/api";
+import s from "./MovieReviews.module.css"
 
 const MovieReviews = () => {
 
@@ -18,7 +19,7 @@ const MovieReviews = () => {
 
 
     return <div>
-        <ul>
+        <ul className={s.reviews} >
             {reviews.length === 0 ? (
                 <p>No reviews available for this movie.</p>
             ) : (

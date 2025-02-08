@@ -1,5 +1,4 @@
 body {
-
   font-family: 'Poppins', sans-serif;
   background-image: url("../src/img/Section\ 1.jpg");
   background-size: cover;
@@ -7,7 +6,10 @@ body {
   background-attachment: fixed;
   margin: 0;
   padding: 0;
+  background-color: #160c31eb;
 }
+
+
 
 a {
   color: #fff;

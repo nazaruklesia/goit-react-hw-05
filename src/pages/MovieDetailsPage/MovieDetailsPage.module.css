@@ -15,7 +15,27 @@
     margin-bottom: 10px;
 }
 
+.cast,
+.reviews {
 
+    background-color: #FB1351;
+    color: white;
+    border: none;
+    padding: 3px 7px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 10px;
+    width: 70px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.nav {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 20px;
+}
 
 .movieDetails {
     background-color: rgba(0, 0, 0, 0.8);
@@ -24,14 +44,16 @@
     box-sizing: border-box;
     display: flex;
     gap: 25px;
+    justify-content: start;
+    align-items: start;
 
 
 }
 
 .title {
     color: #fff;
-    justify-content: center;
-    align-items: center;
+    font-size: 34px;
+
 }
 
 .year {
