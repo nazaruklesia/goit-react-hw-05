@@ -9,8 +9,6 @@ body {
   background-color: #160c31eb;
 }
 
-
-
 a {
   color: #fff;
   text-decoration: none;
@@ -47,18 +45,8 @@ img {
   display: flex;
   justify-content: end;
   align-items: end;
-  /* gap: 40px;
-  margin: 10px; */
   background-color: rgb(35, 10, 58);
 }
-
-/* .nav {
-  color: #F5F5F5;
-  text-decoration: none;
-  margin-right: 15px;
-  font-size: 18px;
-} */
-
 
 button {
   background-color: #FB1351;
@@ -68,7 +56,6 @@ button {
   cursor: pointer;
   transition: 0.3s;
   border-radius: 10px;
-
 }
 
 button:hover {

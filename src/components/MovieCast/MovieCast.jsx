@@ -22,7 +22,6 @@ const MovieCast = () => {
         <ul className={s.movieCast} >
             {cast.map((actor, index) =>
                 <li key={`${actor.id}-${index}`} className={s.item}>
-
                     <p>{actor.name}</p>
                     {actor.profile_path && (
                         <img

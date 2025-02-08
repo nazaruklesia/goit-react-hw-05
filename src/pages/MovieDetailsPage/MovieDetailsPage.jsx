@@ -60,12 +60,9 @@ const MovieDetailsPage = () => {
                             ? movie.genres.map((genre) => genre.name).join(", ")
                             : "Unknown"}
                     </p>
-
                     <p className={s.overview}>
                         <strong>Overview:</strong> {movie.overview || "No description available."}
                     </p>
-
-
                 </div>
             </div>
 

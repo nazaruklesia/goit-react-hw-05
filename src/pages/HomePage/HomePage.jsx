@@ -7,13 +7,11 @@ import s from "./HomePage.module.css"
 
 
 const HomePage = () => {
-
     const [movies, setMovies] = useState([])
     const [searchParams, setSearchParams] = useSearchParams()
     const query = searchParams.get('query') ?? '';
     const location = useLocation();
     console.log(location);
-
 
     useEffect(() => {
         const getData = async () => {

@@ -1,8 +1,8 @@
-import s from "./NotFoundPage.module,css"
+import s from "./NotFoundPage.module.css"
 
 const NotFoundPage = () => {
     return <div className={s.container}>
-        <p>404 substitute the library HOT TOAST</p>
+        <p className={s.notFound}>Page Not Found. Return to Movie Search.</p>
     </div>
 }
 export default NotFoundPage;

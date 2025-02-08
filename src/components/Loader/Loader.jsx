@@ -10,11 +10,10 @@ const Loader = () => {
             ariaLabel="magnifying-glass-loading"
             wrapperStyle={{}}
             wrapperClass="magnifying-glass-wrapper"
-            glassColor="#2258d8c0"                              // змінити колір лупи
-            color="#e8e40cf6"
+            glassColor="#e8e40cf6"
+            color="#FB1351"
         />
     </div>)
-
 }
 
 export default Loader;

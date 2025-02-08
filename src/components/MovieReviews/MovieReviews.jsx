@@ -30,7 +30,6 @@ const MovieReviews = () => {
                     </li>
                 ))}
         </ul>
-
     </div>
 }
 
