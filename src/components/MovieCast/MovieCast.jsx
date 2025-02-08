@@ -4,7 +4,6 @@ import { fetchCreditsMovies } from "../../services/api"
 import s from "./MovieCast.module.css"
 
 const MovieCast = () => {
-
     const { movieId } = useParams()
     const [cast, setCast] = useState([])
 
@@ -16,9 +15,7 @@ const MovieCast = () => {
         getData()
     }, [movieId])
 
-
     return <div>
-
         <ul className={s.movieCast} >
             {cast.map((actor, index) =>
                 <li key={`${actor.id}-${index}`} className={s.item}>
@@ -30,10 +27,8 @@ const MovieCast = () => {
                             width={120}
                         />
                     )}
-
                 </li>)}
         </ul>
-
     </div >
 }
 

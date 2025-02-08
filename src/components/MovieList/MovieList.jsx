@@ -13,7 +13,6 @@ function MovieList({ movies = [] }) {
   console.log(location);
 
   return (
-
     <div className={s.containet}>
       <ul className={s.listMovies}  >
         {uniqueMovies.map(item => (
@@ -29,8 +28,6 @@ function MovieList({ movies = [] }) {
               <p className={s.title}>{item.title}</p>
               <p className={s.year}> <CiCalendarDate /> {item.release_date ? item.release_date.slice(0, 4) : 'N/A'}</p>
               <p className={s.raiting}> <GoStarFill /> {item.vote_average?.toFixed(1) || 'N/A'}</p>
-
-
             </Link>
           </li>
         ))}
